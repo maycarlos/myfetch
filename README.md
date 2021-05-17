@@ -1,6 +1,6 @@
 # myfetch
 
-![alt text](https://github.com/maycarlos/myfetch/image.jpg?raw=true)
+![alt text](https://github.com/maycarlos/myfetch/blob/main/screenshot.png)
 
 Pequenas alterações ao https://github.com/Mangeshrex/rfetch.  
 Download ->  `git clone https://github.com/maycarlos/myfetch`.  
