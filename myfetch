@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# colors
+bold="$(tput bold)"
+magenta="$(tput setaf 5)"
+green="$(tput setaf 2)"
+white="$(tput setaf 7)"
+blue="$(tput setaf 4)"
+red="$(tput setaf 1)"
+black="$(tput setaf 0)"
+yellow="$(tput setaf 3)"
+cyan="$(tput setaf 6)" 
+
+c1="${magenta}"
+c2="${green}"
+c3="${white}"
+c4="${blue}"
+c5="${red}"
+c6="${yellow}"
+c7="${cyan}"
+
+# check distro info 
+distro=$(source /etc/os-release && echo $PRETTY_NAME)
+
+# check the memory
+mem=$(free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p')
+
+# output 
+echo "${c2}   Alien Invader " 
+echo "${c2}     ▀▄   ▄▀     ${c1}os${c3}    $distro"
+echo "${c2}    ▄█▀███▀█▄    ${c7}kr${c3}    $(uname -r)"
+echo "${c2}   █▀███████▀█   ${c4}sh${c3}    $(basename $SHELL)" 
+echo "${c2}   █ █▀▀▀▀▀█ █   ${c5}up${c3}   $(uptime -p | sed 's/up//')"
+echo "${c2}      ▀▀ ▀▀      ${c6}ram${c3}   $mem MB"
+echo "${c2}                 " 
+
