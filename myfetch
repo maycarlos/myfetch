@@ -19,6 +19,9 @@ c4="${red}"
 c5="${yellow}"
 c6="${cyan}"
 
+# get the user
+user="$(whoami)"
+
 # check distro info 
 distro=$(source /etc/os-release && echo $PRETTY_NAME)
 
@@ -35,15 +38,17 @@ system_uptime="$(uptime -p | sed 's/up//')"
 mem=$(free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p')
 
 # output 
-echo "${c0}           ╓────────────────────────────────────╖"
-echo "${c0}           ║ ${c1}os${c0}   $distro            ║"
-echo "${c0}           ║ ${c2}kr${c0}   $kernel║"
-echo "${c0}           ║ ${c4}sh${c0}   $shell                          ║"
-echo "${c0}           ║ ${c5}up${c0}  $system_uptime           ║"
-echo "${c0}           ║ ${c6}ram${c0}  $mem MB                        ║"
-echo "${c0}            \   ────────────────────────────────╜"
-echo "${c0}             \ /"
-echo "${c0}              V"
+
+echo "${c0}      ────────────────────────────────────"
+echo "${c0}       ${c2}user${c0}  $user"
+echo "${c0}       ${c1}os${c0}    $distro"
+echo "${c0}       ${c3}kr${c0}    $kernel"
+echo "${c0}       ${c4}sh${c0}    $shell"
+echo "${c0}       ${c5}up${c0}   $system_uptime"
+echo "${c0}       ${c6}ram${c0}   $mem MB"
+echo "${c0}      \   ────────────────────────────────"
+echo "${c0}       \ /"
+echo "${c0}        V"
 echo "${c2}     ▀▄   ▄▀    "
 echo "${c2}    ▄█▀███▀█▄   "
 echo "${c2}   █▀███████▀█  "
